@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>예약 페이지</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="restaurant-name">F조 레스토랑</div>
+
+        <div class="date-selector">
+            <label for="date-input">날짜 선택</label>
+            <input type="date" id="date-input">
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>17:00</th>
+                        <th>17:30</th>
+                        <th>18:00</th>
+                        <th>18:30</th>
+                        <th>19:00</th>
+                        <th>19:30</th>
+                        <th>20:00</th>
+                        <th>20:30</th>
+                        <th>20:30</th>
+                        <th>20:30</th>
+                        <th>20:30</th>
+                        <th>20:30</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>T1</td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="unavailable"></td>
+                        <td class="unavailable"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                    </tr>
+                    <tr>
+                        <td>T2</td>
+                        <td class="unavailable"></td>
+                        <td class="unavailable"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                    </tr>
+                    <tr>
+                        <td>T3</td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="unavailable"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                    </tr>
+                    <tr>
+                        <td>T4</td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="unavailable"></td>
+                        <td class="unavailable"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                    </tr>
+                    <tr>
+                        <td>T5</td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                    </tr>
+                    <tr>
+                        <td>T6</td>
+                        <td class="unavailable"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="unavailable"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                        <td class="available"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="button-container">
+            <button class="button" onclick="location.href = './reservation.html' ">예약</button>
+            <button class="button" onclick="location.href = './walkin.html' ">현장접수</button>
+            <button class="button" onclick="location.href = './canceling.html' ">예약취소</button>
+            <button class="button" onclick="location.href = './canceling.html' ">예약변경</button>
+            <button class="button" onclick="location.href = './shiftTable.html' ">좌석이동</button>
+            <!-- <button class="button" onclick="location.href = './canceling.html' ">도착기록</button> -->
+        </div>
+    </div>
+</body>
+
+</html>
