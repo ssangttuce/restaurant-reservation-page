@@ -52,8 +52,10 @@ tr > td {
 }
 
 form {
+  width: 200px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 
 label {
@@ -62,11 +64,8 @@ label {
 }
 
 input {
-  padding: 10px;
   font-size: 16px;
-  margin-bottom: 20px;
   border-radius: 5px;
-  border: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -76,7 +75,7 @@ input {
   gap: 10px;
 }
 
-button {
+.button {
   background-color: white;
   border: 2px solid blue;
   color: blue;
@@ -90,19 +89,30 @@ button {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-button:hover {
+.button:hover {
   cursor: pointer;
   background-color: blue;
   color: #fff;
-  box-sizing: border-box;
 }
 
 .back-button {
-  background-color: #f44336;
+  background-color: white;
+  border: 2px solid #f44336;
+  color: #f44336;
+
+  padding: 10px 20px;
+  border-radius: 7px;
+
+  font-size: 16px;
+  transition: 0.2s;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .back-button:hover {
-  background-color: #d32f2f;
+  cursor: pointer;
+  background-color: #f44336;
+  color: white;
 }
 
 .available {
@@ -111,4 +121,14 @@ button:hover {
 
 .unavailable {
   background-color: #d32f2f;
+}
+
+.timeWrapper {
+  width: 100%;
+  /* display: flex; */
+}
+
+.hour,
+.minute {
+  width: 30%;
 }

@@ -14,16 +14,18 @@
         <h1>현장접수하기</h1>
         <form>
             <label for="time">시간</label>
-            <input type="time" id="time" name="time">
+            <div class="timeWrapper">
+                <label for="hour">입장 시간</label>
+                <select name="hour" class="hour"></select>
+                <select name="minute" class="minute"></select>
+            </div>
             <label for="people">인원수</label>
             <input type="number" id="people" name="people" min="1" max="10">
-            <div class="button-container">
-
-                <button id="confirm-button">완료</button>
-            </div>
+            <input type="submit" class="button" id="confirm-button" value="완료">
         </form>
         <button class="back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
     </div>
+    <script src="../JS/genTime.js"></script>
 </body>
 
 </html>

@@ -13,18 +13,18 @@
     <div class="container">
         <h1>테이블 변경</h1>
         <form>
-            <p class="table-number">현재 테이블 번호: 1</p>
+
             <label for="customer-name">예약자명</label>
-            <input type="text" id="customer-name">
+            <input type="text" id="customer-name" onchange="getTable()">
+            <p class="table-number">현재 테이블 번호: <span id="table-num"></span>
+            </p>
             <label for="new-table-number">옮길 테이블 번호</label>
             <input type="number" id="new-table-number">
-            <div class="button-container">
-                <button class="back-button">뒤로가기</button>
-                <button id="confirm-button">완료</button>
-            </div>
+            <input type="submit" class="button" id="confirm-button" value="완료">
         </form>
-
+        <button class="back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
     </div>
+    <script src="../JS/getReservation.js"></script>
 </body>
 
 </html>
