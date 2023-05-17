@@ -12,6 +12,13 @@ body {
   text-align: center;
 }
 
+form {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -25,7 +32,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-table {
+.table {
   width: 900px;
   height: 100%;
 }
@@ -37,34 +44,30 @@ table {
   overflow-y: auto;
 }
 
-th:nth-child(n + 2) {
+.nth-table-header {
+  width: 120px;
+  min-width: 120px;
   text-align: left;
   border-left: 2px solid black;
 }
 
-th,
-td {
+.th{
   width: 120px;
   min-width: 120px;
 }
 
-tr > td {
+.td {
+  width: 120px;
+  min-width: 120px;
   border: 1px solid black;
 }
 
-form {
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-label {
+.label {
   font-size: 16px;
   margin-bottom: 10px;
 }
 
-input {
+.input {
   font-size: 16px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -118,10 +121,12 @@ input {
 
 .available {
   background-color: #4caf50;
+  border: 1px solid black;
 }
 
 .unavailable {
   background-color: #d32f2f;
+  border: 1px solid black;
 }
 
 .timeWrapper {
