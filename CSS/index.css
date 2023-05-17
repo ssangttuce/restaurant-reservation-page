@@ -43,7 +43,7 @@ form {
   overflow-x: auto;
 }
 
-.nth-table-header {
+th:nth-child(n + 2)  {
   width: 120px;
   min-width: 120px;
   text-align: left;
