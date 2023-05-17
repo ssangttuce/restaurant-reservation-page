@@ -13,14 +13,29 @@
 
 <body>
     <div class="container">
-        <h1>예약취소하기</h1>
+        <h1>예약 조회하기</h1>
         <form>
             <label for="name">예약자명</label>
             <input type="text" id="name" name="name">
-            <input type="submit" class="button" id="confirm-button" value="완료">
+            <input type="submit" class="button" value="조회">
         </form>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <td>날짜</td>
+                    <td>시간</td>
+                    <td>테이블</td>
+                    <td>인원</td>
+                    <td>작업</td>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
         <button class="back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
     </div>
+    <script src="../JS/getReservation.js"></script>
 </body>
 
 </html>
