@@ -41,6 +41,7 @@ form {
   width: 60%;
   height: 60%;
   overflow-x: auto;
+  overflow-y: auto;
 }
 
 th:nth-child(n + 2)  {
