@@ -14,97 +14,20 @@
     <div class="container">
         <div class="restaurant-name">F조 레스토랑</div>
 
-        <div class="date-selector">
+        <form>
             <label for="date-input">날짜 선택</label>
             <input type="date" id="date-input">
-        </div>
+            <input type="submit" class="search-button" value="조회">
+        </form>
+
         <div class="table-wrapper">
-            <table>
+            <table id="reservation-table">
                 <thead>
                     <tr>
                         <th></th>
-                        <th>17:00</th>
-                        <th>17:30</th>
-                        <th>18:00</th>
-                        <th>18:30</th>
-                        <th>19:00</th>
-                        <th>19:30</th>
-                        <th>20:00</th>
-                        <th>20:30</th>
-                        <th>21:00</th>
-                        <th>21:30</th>
-                        <th>22:00</th>
-                        <th>22:30</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>T1</td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="unavailable"></td>
-                        <td class="unavailable"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                    </tr>
-                    <tr>
-                        <td>T2</td>
-                        <td class="unavailable"></td>
-                        <td class="unavailable"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                    </tr>
-                    <tr>
-                        <td>T3</td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="unavailable"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                    </tr>
-                    <tr>
-                        <td>T4</td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="unavailable"></td>
-                        <td class="unavailable"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                    </tr>
-                    <tr>
-                        <td>T5</td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                    </tr>
-                    <tr>
-                        <td>T6</td>
-                        <td class="unavailable"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="unavailable"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                        <td class="available"></td>
-                    </tr>
-                </tbody>
+                <tbody id="reservation-block"></tbody>
             </table>
         </div>
 

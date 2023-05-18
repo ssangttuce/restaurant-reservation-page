@@ -25,7 +25,8 @@ form {
   align-items: center;
   gap: 20px;
   width: 80vw;
-  height: 60vh;
+  /* height: 60vh; */
+  min-height: 60vh;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
@@ -39,12 +40,12 @@ form {
 
 .table-wrapper {
   width: 60%;
-  height: 60%;
+  /* height: 60%; */
   overflow-x: auto;
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
-th:nth-child(n + 2)  {
+th:nth-child(n + 2) {
   width: 120px;
   min-width: 120px;
   text-align: left;
@@ -99,6 +100,25 @@ th:nth-child(n + 2)  {
   color: #fff;
 }
 
+.search-button {
+  background-color: white;
+  border: 2px solid seagreen;
+  color: seagreen;
+
+  border-radius: 7px;
+
+  font-size: 16px;
+  transition: 0.2s;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-button:hover {
+  cursor: pointer;
+  background-color: seagreen;
+  color: white;
+}
+
 .back-button {
   background-color: white;
   border: 2px solid #f44336;
@@ -126,7 +146,6 @@ th:nth-child(n + 2)  {
 
 .unavailable {
   background-color: #d32f2f;
-  border: 1px solid black;
 }
 
 .timeWrapper {
@@ -134,11 +153,15 @@ th:nth-child(n + 2)  {
   /* display: flex; */
 }
 
-.table-wrapper * {
+/* .table-wrapper * {
   border: 1px solid black;
-}
+} */
 
 .hour,
 .minute {
   width: 30%;
+}
+
+#reservation-table {
+  border-collapse: collapse;
 }

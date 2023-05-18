@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/index.css">
-    <title>document</title>
+    <title>테이블 변경</title>
 </head>
 
 <body>
@@ -15,11 +15,13 @@
         <form>
 
             <label for="customer-name">예약자명</label>
-            <input type="text" id="customer-name" onchange="getTable()">
+            <input type="text" id="customer-name" onchange="searchTableByName()">
             <p class="table-number">현재 테이블 번호: <span id="table-num"></span>
             </p>
             <label for="new-table-number">옮길 테이블 번호</label>
-            <input type="number" id="new-table-number">
+            <select name="table-num" id="table-num" required>
+                <!-- JS에서 validation 검증 -->
+            </select>
             <input type="submit" class="button" id="confirm-button" value="완료">
         </form>
         <button class="back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
