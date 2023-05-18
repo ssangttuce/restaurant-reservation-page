@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/index.css">
-    <title>Document</title>
+    <title>reservation</title>
 </head>
 
 <body>
@@ -14,24 +14,27 @@
         <h1>예약하기</h1>
         <form>
             <label for="name">예약자명</label>
-            <input type="text" id="name" name="name">
-            <label for="time">시간</label>
+            <input type="text" id="name" name="name" required>
+            <label for="name">전화번호</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
+            <label>입장 시간</label>
             <div class="timeWrapper">
-                <label for="hour">입장 시간</label>
-                <select name="hour" class="hour"></select>
-                <select name="minute" class="minute"></select>
-            </div>
-            <div class="timeWrapper">
-                <label for="hour">퇴장 시간</label>
-                <select name="hour" class="hour"></select>
-                <select name="minute" class="minute"></select>
+                <select name="hour" class="hour" required></select>
+                <select name="minute" class="minute" required></select>
+                <!-- JS에서 validation 검증 -->
             </div>
             <label for="people">인원수</label>
-            <input type="number" id="people" name="people" min="1" max="10">
-            <input type="submit" class="button" id="confirm-button" value="완료">
+            <input type="number" id="people" name="people" min="1" max="10" required>
+            <label for="table-num">테이블 번호</label>
+            <select name="table-num" id="table-num" required>
+                <!-- JS에서 validation 검증 -->
+            </select>
+            <input type="submit" class="button confirm-button" value="완료">
         </form>
         <button class="back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
     </div>
+
+    <script src="../JS/getReservation.js"></script>
     <script src="../JS/genTime.js"></script>
     <script src="../JS/app.js"></script>
 </body>

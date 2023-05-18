@@ -51,7 +51,7 @@ form {
   border-left: 2px solid black;
 }
 
-.th{
+.th {
   width: 120px;
   min-width: 120px;
 }
@@ -132,6 +132,10 @@ form {
 .timeWrapper {
   width: 100%;
   /* display: flex; */
+}
+
+.table-wrapper * {
+  border: 1px solid black;
 }
 
 .hour,

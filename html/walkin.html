@@ -15,16 +15,17 @@
         <form>
             <label for="time">시간</label>
             <div class="timeWrapper">
-                <label for="hour">입장 시간</label>
-                <select name="hour" class="hour"></select>
-                <select name="minute" class="minute"></select>
+                <label>입장 시간</label>
+                <select name="hour" class="hour" required></select>
+                <select name="minute" class="minute" required></select>
             </div>
             <label for="people">인원수</label>
-            <input type="number" id="people" name="people" min="1" max="10">
-            <input type="submit" class="button" id="confirm-button" value="완료">
+            <input type="number" id="people" name="people" min="1" max="10" required>
+            <input type="submit" class="button confirm-button" value="완료">
         </form>
         <button class="back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
     </div>
+    <script src="../JS/getReservation.js"></script>
     <script src="../JS/genTime.js"></script>
 </body>
 
