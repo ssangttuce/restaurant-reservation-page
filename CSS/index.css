@@ -43,6 +43,8 @@ form {
   /* height: 60%; */
   overflow-x: auto;
   /* overflow-y: auto; */
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 th:nth-child(n + 2) {
@@ -146,6 +148,7 @@ th:nth-child(n + 2) {
 
 .unavailable {
   background-color: #d32f2f;
+  border: 1px solid black;
 }
 
 .timeWrapper {
@@ -164,4 +167,5 @@ th:nth-child(n + 2) {
 
 #reservation-table {
   border-collapse: collapse;
+  overflow: scroll;
 }
