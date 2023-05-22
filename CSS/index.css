@@ -169,3 +169,14 @@ th:nth-child(n + 2) {
   border-collapse: collapse;
   overflow: scroll;
 }
+
+tr:hover td:first-child{
+  background-color: #a8a8a8;
+}
+
+td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+}
