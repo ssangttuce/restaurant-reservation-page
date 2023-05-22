@@ -146,6 +146,7 @@ th:nth-child(n + 2) {
 
 .unavailable {
   background-color: #d32f2f;
+  border: 1px solid black;
 }
 
 .timeWrapper {
@@ -153,13 +154,18 @@ th:nth-child(n + 2) {
   /* display: flex; */
 }
 
-/* .table-wrapper * {
-  border: 1px solid black;
-} */
+.table-wrapper * {
+  /* border: 1px solid black; */
+}
 
 .hour,
 .minute {
   width: 30%;
+}
+
+.change-button {
+}
+.cancel-button {
 }
 
 #reservation-table {

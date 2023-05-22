@@ -22,8 +22,15 @@ function ccButton() {
   let c2 = document.createElement('button');
   c1.innerText = '변경';
   c2.innerText = '취소';
-  c1.className = 'back-button';
-  c2.className = 'back-button';
+  c1.className = 'change-button';
+  c2.className = 'cancel-button';
+  // c1.onclick = "location.href = '../html/shiftTable.html'";
+  c1.onclick = () => {
+    location.href = '../html/shiftTable.html';
+  };
+  c2.onclick = () => {
+    location.href = '../html/shiftTable.html';
+  };
   return [c1, c2];
 }
 
