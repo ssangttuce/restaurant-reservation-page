@@ -1,24 +1,11 @@
-// function reservation() {
-//   //   const click = event.currentTarget;
-//   //   click.style.backgroundColor = 'blue';
-
-//   const click = document.getElementsByClassName('available');
-//   for (block of click) {
-//     block.style.backgroundColor = 'blue';
-//   }
-// }
-
 function genTimeline() {
   const timeline = document.getElementById('reservation-table').firstElementChild.firstElementChild;
   for (let i = 0; i < 48; i++) {
     let th = document.createElement('th');
+    th.className = 'time';
     th.innerText = `${parseInt(i / 2)}:${i % 2 === 0 ? '00' : '30'}`;
     timeline.appendChild(th);
   }
-}
-
-function genRTable() {
-  const res = document.getElementById('reservation-block');
 }
 
 function addTable(tableCount) {

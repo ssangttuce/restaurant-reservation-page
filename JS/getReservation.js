@@ -6,13 +6,15 @@ function searchTableByName(userName) {
 
 function genTableNum() {
   // get table count from sever and show user which table is available
-  let table = document.getElementById('table-num');
-  table.appendChild(document.createElement('option'));
-  for (let i = 1; i < 17; i++) {
-    let numOption = document.createElement('option');
-    numOption.value = i;
-    numOption.innerText = i;
-    table.appendChild(numOption);
+  let table = document.getElementsByClassName('table-num');
+  for (let tableItem of table) {
+    tableItem.appendChild(document.createElement('option'));
+    for (let i = 1; i < 17; i++) {
+      let numOption = document.createElement('option');
+      numOption.value = i;
+      numOption.innerText = i;
+      tableItem.appendChild(numOption);
+    }
   }
 }
 
@@ -26,17 +28,21 @@ function ccButton() {
   c2.className = 'cancel-button';
   // c1.onclick = "location.href = '../html/shiftTable.html'";
   c1.onclick = () => {
-    location.href = '../html/shiftTable.html';
+    location.href = '../html/changeReservation.html';
   };
   c2.onclick = () => {
-    location.href = '../html/cancelTable.html';
+    location.href = '../html/cancelReservation.html';
   };
+  // c2: 취소 확인 modal 띄운후 server로 취소 요청
   return [c1, c2];
 }
 
 function searchReservationByName() {
   // 예약자의 모든 예약을 server에서 받음
   let searchResult = document.getElementById('reservation-list');
+  if (searchResult === null) {
+    return;
+  }
   for (let list of getDummyReservation(20)) {
     let res = document.createElement('tr');
     res.innerHTML += `<td>` + `${list.a}` + `</td>`;

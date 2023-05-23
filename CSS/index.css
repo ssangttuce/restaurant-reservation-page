@@ -39,12 +39,17 @@ form {
 }
 
 .table-wrapper {
-  width: 60%;
+  width: fit-content;
+  max-width: 60%;
   /* height: 60%; */
   max-height: 50vh;
   overflow-x: auto;
   margin: 0 auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.table-wrapper > table {
+  width: 100%;
 }
 
 th:nth-child(n + 2) {
@@ -151,23 +156,9 @@ th:nth-child(n + 2) {
   border: 1px solid black;
 }
 
-.timeWrapper {
-  width: 100%;
-  /* display: flex; */
-}
-
-.table-wrapper * {
-  /* border: 1px solid black; */
-}
-
 .hour,
 .minute {
   width: 30%;
-}
-
-.change-button {
-}
-.cancel-button {
 }
 
 #reservation-table {
@@ -176,10 +167,6 @@ th:nth-child(n + 2) {
 }
 
 .table-cell tr:hover td:first-child {
-  background-color: #a8a8a8;
-}
-
-.reservation-cell tr:hover {
   background-color: #a8a8a8;
 }
 
