@@ -29,7 +29,7 @@ function ccButton() {
     location.href = '../html/shiftTable.html';
   };
   c2.onclick = () => {
-    location.href = '../html/shiftTable.html';
+    location.href = '../html/cancelTable.html';
   };
   return [c1, c2];
 }

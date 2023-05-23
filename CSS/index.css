@@ -179,6 +179,10 @@ th:nth-child(n + 2) {
   background-color: #a8a8a8;
 }
 
+.reservation-cell tr:hover{
+  background-color: #a8a8a8;
+}
+
 td:first-child {
   position: sticky;
   left: 0;
