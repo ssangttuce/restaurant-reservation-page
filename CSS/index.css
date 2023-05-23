@@ -175,7 +175,11 @@ th:nth-child(n + 2) {
   overflow: scroll;
 }
 
-tr:hover td:first-child {
+.table-cell tr:hover td:first-child {
+  background-color: #a8a8a8;
+}
+
+.reservation-cell tr:hover {
   background-color: #a8a8a8;
 }
 
