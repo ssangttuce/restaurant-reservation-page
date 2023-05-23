@@ -34,11 +34,10 @@ function ccButton() {
   return [c1, c2];
 }
 
-function searchReservationByName(userReservation) {
+function searchReservationByName() {
   // 예약자의 모든 예약을 server에서 받음
   let searchResult = document.getElementById('reservation-list');
-  //마지막 td에 cc추가하기
-  for (let list of userReservation) {
+  for (let list of getDummyReservation(20)) {
     let res = document.createElement('tr');
     res.innerHTML += `<td>` + `${list.a}` + `</td>`;
     res.innerHTML += `<td>` + `${list.b}` + `</td>`;
@@ -53,19 +52,14 @@ function searchReservationByName(userReservation) {
   }
 }
 
-let userReservation = [
-  {
-    a: 'a',
-    b: 'b',
-    c: 'c',
-    d: 'd',
-  },
-  {
-    a: 'A',
-    b: 'B',
-    c: 'C',
-    d: 'D',
-  },
-];
+function getDummyReservation(cnt) {
+  let dummy = [];
 
-searchReservationByName(userReservation);
+  for (let i = 0; i < cnt; i++) {
+    let reservation = { a: `a+${i}`, b: `b+${i}`, c: `c+${i}`, d: `d+${i}` };
+    dummy.push(reservation);
+  }
+  return dummy;
+}
+searchReservationByName();
+genTableNum();

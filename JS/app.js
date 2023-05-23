@@ -22,6 +22,7 @@ function genRTable() {
 }
 
 function addTable(tableCount) {
+  //서버에서 받아오기
   const res = document.getElementById('reservation-block');
   for (let i = 1; i <= tableCount; i++) {
     let table = document.createElement('tr');
@@ -41,5 +42,4 @@ function getRBlocks(table) {
 }
 
 genTimeline();
-addTable(20);
-getRBlocks();
+addTable(100);
