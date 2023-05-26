@@ -1,0 +1,49 @@
+.general-table {
+    width: 900px;
+    height: 100%;
+}
+
+.table-wrapper {
+    position: relative;
+    width: fit-content;
+    max-width: 70%;
+    /* height: 60%; */
+    max-height: 50vh;
+    overflow-x: auto;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.table-wrapper>table {
+    width: 100%;
+}
+
+th:nth-child(n + 2) {
+    width: 120px;
+    min-width: 120px;
+    text-align: left;
+    border-left: 2px solid black;
+}
+
+.available {
+    background-color: #4caf50;
+    border: 1px solid black;
+}
+
+.unavailable {
+    background-color: #d32f2f;
+    border: 1px solid black;
+}
+
+#reservation-table {
+    border-collapse: collapse;
+    overflow: scroll;
+}
+
+.table-cell tr:hover td:first-child {
+    background-color: #a8a8a8;
+}
+
+td:first-child {
+    position: sticky;
+}
