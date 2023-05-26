@@ -16,7 +16,7 @@
         <h1>예약 조회하기</h1>
         <form>
             <label for="name">예약자명</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="search-name" name="name" required>
             <input type="submit" class="search-button" value="조회">
             <!-- submit후 input content 남아있게 JS 추가 -->
         </form>
@@ -34,12 +34,10 @@
         </div>
         <div id="cancel-check-modal">
             <h1>해당 예약 정말로 취소하시겠습니까?</h1>
-            <div>
-                <table id="cancel-reservation">
-
-                </table>
-            </div>
             <form>
+            <div>
+                <table id="cancel-reservation"></table>
+            </div>
                 <input type="submit" class="button" id="confirm-button" value="예약취소">
             </form>
             <button class="back-button" onclick="location.href = './cancel-change.html' ">뒤로가기</button>

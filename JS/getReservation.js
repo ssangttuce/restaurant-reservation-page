@@ -26,6 +26,7 @@ function ccButton(cancelNum) {
   c1.className = 'change-button';
   c2.setAttribute('type', 'checkbox');
   c2.id = `cancel-${cancelNum}`;
+  c2.name = 'cancel-reservation';
   let c2Label = document.createElement('label');
   c2Label.setAttribute(`for`, `cancel-${cancelNum}`);
   c2Label.innerText = '취소';
