@@ -43,6 +43,13 @@
 .table-cell #table-row:hover #table-d:first-child {
     background-color: #a8a8a8;
 }
+
+.cancel-change-table{
+    width: 100px;
+    min-width: 100px;
+    text-align: center;
+    border-left: 2px solid black;
+}
 /*
 td:first-child {
     position: sticky;
