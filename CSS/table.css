@@ -18,7 +18,7 @@
     width: 100%;
 }
 
-th:nth-child(n + 2) {
+#theader:nth-child(n + 2) {
     width: 120px;
     min-width: 120px;
     text-align: left;
@@ -40,10 +40,11 @@ th:nth-child(n + 2) {
     overflow: scroll;
 }
 
-.table-cell tr:hover td:first-child {
+.table-cell #table-row:hover #table-d:first-child {
     background-color: #a8a8a8;
 }
-
+/*
 td:first-child {
     position: sticky;
 }
+*/
