@@ -7,44 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>취소/변경</title>
-    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/container.css">
     <link rel="stylesheet" href="../CSS/table.css">
     <link rel="stylesheet" href="../CSS/button.css">
 </head>
 
 <body>
     <div class="container">
-        <h1>예약 조회하기</h1>
-        <form>
-            <label for="name">예약자명</label>
-            <input type="text" id="search-name" name="name" required>
-            <input type="submit" class="search-button" value="조회">
-            <!-- submit후 input content 남아있게 JS 추가 -->
-        </form>
+        <div class="main-header">
+            <h1>예약 조회하기</h1>
+            <form>
+                <label for="name">예약자명</label>
+                <input type="text" id="search-name" name="name" required>
+                <button type="submit" class="hoverEffect search-button">조회</button>
+                <!-- submit후 input content 남아있게 JS 추가 -->
+            </form>
+        </div>
+
         <div class="table-wrapper">
             <table>
                 <thead>
-                    <th class="cancel-change-table">날짜</th>
-                    <th class="cancel-change-table">시간</th>
-                    <th class="cancel-change-table">테이블</th>
-                    <th class="cancel-change-table">인원</th>
-                    <th class="cancel-change-table">작업</th>
+                    <th class="reservation-table-header">날짜</th>
+                    <th class="reservation-table-header">시간</th>
+                    <th class="reservation-table-header">테이블</th>
+                    <th class="reservation-table-header">인원</th>
+                    <th class="reservation-table-header">작업</th>
                 </thead>
-                <tbody id="reservation-list" class="table-cell"></tbody>
+                <tbody id="reservation-list"></tbody>
             </table>
         </div>
         <div id="cancel-check-modal">
             <h1>해당 예약 정말로 취소하시겠습니까?</h1>
             <form>
-            <div>
-                <table id="cancel-reservation"></table>
-            </div>
-                <input type="submit" class="general-button" id="confirm-button" value="예약취소">
+                <div>
+                    <table id="cancel-reservation"></table>
+                </div>
+                <button type="submit" class="hoverEffect general-button">예약취소</button>>
             </form>
-            <button class="back-button" onclick="location.href = './cancel-change.html' ">뒤로가기</button>
+            <button class="hoverEffect back-button" onclick="location.href = './cancel-change.html' ">뒤로가기</button>
         </div>
 
-        <button class="back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
+        <button class="hoverEffect back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
     </div>
     <!-- <script src="../JS/app.js"></script> -->
     <script src="../JS/getReservation.js"></script>

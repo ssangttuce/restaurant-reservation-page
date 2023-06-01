@@ -2,6 +2,7 @@ function searchTableByName(userName) {
   //  user search booked table
   let table = document.getElementById('table-num');
   table.innerText = '1';
+  table.innerHTML = `<option>` + `1` + `</option>`;
 }
 
 function genTableNum() {
@@ -57,6 +58,7 @@ function searchReservationByName() {
   let i = 0;
   for (let list of getDummyReservation(20)) {
     let res = document.createElement('tr');
+    res.className = '';
     let resHtml = `<td>` + `${list.a}` + `</td>`;
     resHtml += `<td>` + `${list.b}` + `</td>`;
     resHtml += `<td>` + `${list.c}` + `</td>`;

@@ -2,8 +2,7 @@ function genTimeline() {
   const timeline = document.getElementById('reservation-table').firstElementChild.firstElementChild;
   for (let i = 0; i < 48; i++) {
     let th = document.createElement('th');
-    th.id = "theader"
-    th.className = 'time';
+    th.className = 'reservation-table-header';
     th.innerText = `${parseInt(i / 2)}:${i % 2 === 0 ? '00' : '30'}`;
     timeline.appendChild(th);
   }
@@ -14,8 +13,8 @@ function addTable(tableCount) {
   const res = document.getElementById('reservation-block');
   for (let i = 1; i <= tableCount; i++) {
     let table = document.createElement('tr');
-    table.id = "table-row"
-    table.innerHTML = '<td id="table-d">' + `T${i}` + '</td>';
+    table.className = 'table-row';
+    table.innerHTML = `<td id="table-${i}">` + `T${i}` + '</td>';
     res.appendChild(table);
     getRBlocks(table);
   }
@@ -31,4 +30,4 @@ function getRBlocks(table) {
 }
 
 genTimeline();
-addTable(100);
+addTable(20);

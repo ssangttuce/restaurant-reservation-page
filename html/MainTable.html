@@ -7,36 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <title>RMM</title>
-    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/container.css">
     <link rel="stylesheet" href="../CSS/table.css">
     <link rel="stylesheet" href="../CSS/button.css">
 </head>
 
 <body>
     <div class="container">
-        <div class="restaurant-name">F조 레스토랑</div>
-
-        <form>
-            <label>날짜 선택</label>
-            <input type="date" name="search-date" class="date">
-            <input type="submit" class="search-button" value="조회">
-        </form>
+        <div class="main-header">
+            <h1 class="restaurant-name">F조 레스토랑</h1>
+            <form>
+                <label>날짜 선택</label>
+                <input type="date" name="search-date" class="date">
+                <button type="submit" class="hoverEffect search-button">조회</button>
+            </form>
+        </div>
 
         <div class="table-wrapper">
             <table id="reservation-table">
                 <thead>
                     <tr>
-                        <th></th>
+                        <th class="reservation-table-header"></th>
                     </tr>
                 </thead>
-                <tbody id="reservation-block" class="table-cell"></tbody>
+                <tbody class="table-cell" id="reservation-block"></tbody>
             </table>
         </div>
 
         <div class="button-container">
-            <button class="general-button" onclick="location.href = './reservation.html' ">예약</button>
-            <button class="general-button" onclick="location.href = './walkin.html' ">현장접수</button>
-            <button class="general-button" onclick="location.href = './cancel-change.html' ">예약 취소/변경</button>
+            <button class="hoverEffect general-button" onclick="location.href = './reservation.html' ">예약</button>
+            <button class="hoverEffect general-button" onclick="location.href = './walkin.html' ">현장접수</button>
+            <button class="hoverEffect general-button" onclick="location.href = './cancel-change.html' ">예약
+                취소/변경</button>
             <!-- <button class="button" onclick="location.href = './cancel-change.html' ">예약변경</button>
             <button class="button" onclick="location.href = './shiftTable.html' ">좌석이동</button> -->
         </div>

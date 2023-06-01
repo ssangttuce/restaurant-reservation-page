@@ -1,57 +1,66 @@
-.general-table {
-    width: 900px;
-    height: 100%;
-}
-
 .table-wrapper {
-    position: relative;
-    width: fit-content;
-    max-width: 70%;
-    /* height: 60%; */
-    max-height: 50vh;
-    overflow-x: auto;
-    margin: 0 auto;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 70%;
+  max-height: 50vh;
+  overflow: auto;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
-.table-wrapper>table {
-    width: 100%;
+.table-wrapper > * {
+  min-width: 100%;
+  border-collapse: collapse;
 }
 
-#theader:nth-child(n + 2) {
-    width: 120px;
-    min-width: 120px;
-    text-align: left;
-    border-left: 2px solid black;
+.available,
+.unavailable {
+  /* width: 100px; */
+  height: 30px;
+  border: 1px solid black;
 }
 
 .available {
-    background-color: #4caf50;
-    border: 1px solid black;
+  background-color: #4caf50;
 }
 
 .unavailable {
-    background-color: #d32f2f;
-    border: 1px solid black;
+  background-color: #d32f2f;
 }
 
 #reservation-table {
-    border-collapse: collapse;
-    overflow: scroll;
+  border-collapse: collapse;
 }
 
-.table-cell #table-row:hover #table-d:first-child {
-    background-color: #a8a8a8;
+.table-cell .table-row:nth-child(n):hover td[id^='table-']:nth-child(n) {
+  background-color: #a8a8a8;
 }
 
-.cancel-change-table{
-    width: 100px;
-    min-width: 100px;
-    text-align: center;
-    border-left: 2px solid black;
+td[id^='table-'] {
+  position: sticky;
+  left: 0;
+  background: rgba(217, 217, 217, 1);
+  border: 1px solid black;
 }
-/*
-td:first-child {
-    position: sticky;
+
+.reservation-table-header {
+  width: 60px;
+  height: 30px;
+  background-color: #e9e9e9;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
-*/
+
+.reservation-table-header:nth-child(n + 1) {
+  border-left: 1px solid black;
+}
+
+#reservation-list > tr {
+  border: 1px solid black;
+}
+
+#reservation-list td {
+  width: 20%;
+  height: 40px;
+}
