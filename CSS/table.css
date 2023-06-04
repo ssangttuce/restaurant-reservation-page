@@ -39,7 +39,7 @@
 td[id^='table-'] {
   position: sticky;
   left: 0;
-  background: rgba(217, 217, 217, 1);
+  background: #e9e9e9;
   border: 1px solid black;
 }
 

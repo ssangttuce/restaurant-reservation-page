@@ -47,6 +47,10 @@
   background-image: linear-gradient(to right, #f44336 0%, #f44336 100%);
 }
 
+input[id^='cancel-'] {
+  display: none;
+}
+
 .change-button,
 input[id^='cancel-'] + label {
   all: unset;

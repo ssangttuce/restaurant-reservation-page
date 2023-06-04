@@ -1,21 +1,72 @@
-function searchTableByName(userName) {
-  //  user search booked table
-  let table = document.getElementById('table-num');
-  table.innerText = '1';
-  table.innerHTML = `<option>` + `1` + `</option>`;
+let totalReservation = [
+  {
+    arrivalDateTime: 'a',
+    bookingDateTime: '오늘',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '김상후',
+    phoneNumber: '01053413270',
+    tableNumber: 16,
+  },
+];
+
+let totalReservationCount = totalReservation.length;
+
+function getReservations() {
+  axios
+    .get('/booking')
+    .then((allReservation) => {
+      // 저장할 데이터 = res.data...
+      for (item of allReservation.data) totalReservation.unshift(item);
+    })
+    .catch((err) => {
+      alert('예약 불러오기 실패');
+    });
 }
 
-function genTableNum() {
+function searchTableByName() {
+  let userName = document.getElementById('search-name').value;
+  if (userName == null) return;
+  let searchResult = document.getElementById('reservation-list');
+  searchResult.innerHTML = '';
+
+  for (let i = 0; i < totalReservation.length; i++) {
+    if (totalReservation[i].name === userName) {
+      let inquiredReservation = totalReservation[i];
+      let reservationRow = document.createElement('tr');
+
+      let reservationInfo = `<td>` + `${inquiredReservation.bookingDateTime}` + `</td>`;
+      console.log(reservationInfo);
+      reservationInfo += `<td>` + `${inquiredReservation.bookingDateTime}` + `</td>`;
+      reservationInfo += `<td>` + `${inquiredReservation.tableNumber}` + `</td>`;
+      reservationInfo += `<td>` + `${inquiredReservation.covers}` + `</td>`;
+      reservationRow.innerHTML = reservationInfo + `<td></td>`;
+      for (let cc of ccButton(i)) {
+        reservationRow.lastElementChild.appendChild(cc);
+      }
+      i++;
+      reservationRow.lastElementChild.lastElementChild.onclick = () => {
+        const cancelReservation = document.createElement('tr');
+        cancelReservation.innerHTML = reservationInfo;
+        document.getElementById('cancel-reservation').appendChild(cancelReservation);
+      };
+
+      searchResult.appendChild(reservationRow);
+    }
+  }
+}
+
+function genTableNum(maxTableCount) {
   // get table count from sever and show user which table is available
   let table = document.getElementsByClassName('table-num');
-  for (let tableItem of table) {
-    tableItem.appendChild(document.createElement('option'));
-    for (let i = 1; i < 17; i++) {
-      let numOption = document.createElement('option');
-      numOption.value = i;
-      numOption.innerText = i;
-      tableItem.appendChild(numOption);
-    }
+
+  table.appendChild(document.createElement('option'));
+  for (let i = 1; i < maxTableCount; i++) {
+    let numOption = document.createElement('option');
+    numOption.value = i;
+    numOption.innerText = i;
+    table.appendChild(numOption);
   }
 }
 
@@ -48,45 +99,3 @@ function ccButton(cancelNum) {
 
   return [c1, c2, c2Label];
 }
-
-function searchReservationByName() {
-  // 예약자의 모든 예약을 server에서 받음
-  let searchResult = document.getElementById('reservation-list');
-  if (searchResult === null) {
-    return;
-  }
-  let i = 0;
-  for (let list of getDummyReservation(20)) {
-    let res = document.createElement('tr');
-    res.className = '';
-    let resHtml = `<td>` + `${list.a}` + `</td>`;
-    resHtml += `<td>` + `${list.b}` + `</td>`;
-    resHtml += `<td>` + `${list.c}` + `</td>`;
-    resHtml += `<td>` + `${list.d}` + `</td>`;
-    res.innerHTML = resHtml + `<td></td>`;
-    for (let cc of ccButton(i)) {
-      res.lastElementChild.appendChild(cc);
-    }
-    i++;
-    searchResult.appendChild(res);
-
-    res.lastElementChild.lastElementChild.onclick = () => {
-      let cancelReservation = document.createElement('tr');
-      cancelReservation.innerHTML = resHtml;
-      document.getElementById('cancel-reservation').appendChild(cancelReservation);
-    };
-  }
-
-  function getDummyReservation(cnt) {
-    let dummy = [];
-
-    for (let i = 0; i < cnt; i++) {
-      let reservation = { a: `a+${i}`, b: `b+${i}`, c: `c+${i}`, d: `d+${i}` };
-      dummy.push(reservation);
-    }
-    return dummy;
-  }
-}
-
-searchReservationByName();
-genTableNum();

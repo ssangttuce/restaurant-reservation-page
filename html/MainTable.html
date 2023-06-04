@@ -12,14 +12,14 @@
     <link rel="stylesheet" href="../CSS/button.css">
 </head>
 
-<body>
+<body onload="initialSetting()">
     <div class="container">
         <div class="main-header">
             <h1 class="restaurant-name">F조 레스토랑</h1>
             <form>
                 <label>날짜 선택</label>
                 <input type="date" name="search-date" class="date">
-                <button type="submit" class="hoverEffect search-button">조회</button>
+                <button type="submit" onsubmit="getReservations()" class="hoverEffect search-button">조회</button>
             </form>
         </div>
 
@@ -43,7 +43,9 @@
             <button class="button" onclick="location.href = './shiftTable.html' ">좌석이동</button> -->
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../JS/app.js"></script>
+    <script src="../JS/getReservation.js"></script>
 </body>
 
 </html>
