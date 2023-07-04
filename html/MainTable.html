@@ -9,6 +9,7 @@
     <title>RMM</title>
     <link rel="stylesheet" href="../CSS/container.css">
     <link rel="stylesheet" href="../CSS/table.css">
+    <link rel="stylesheet" href="../CSS/form-input.css">
     <link rel="stylesheet" href="../CSS/button.css">
 </head>
 
@@ -17,20 +18,23 @@
         <div class="main-header">
             <h1 class="restaurant-name">F조 레스토랑</h1>
             <form>
-                <label>날짜 선택</label>
-                <input type="date" name="search-date" class="date">
-                <button type="submit" onsubmit="getReservations()" class="hoverEffect search-button">조회</button>
+                <div class="input-wrapper">
+                    <input type="date" name="search-date" class="getInfo date" onchange="getReservation()">
+                    <!-- <button type="submit" onsubmit="getReservations()" class="hoverEffect search-button">조회</button> -->
+                    <label>날짜 선택</label>
+                </div>
+                
             </form>
         </div>
 
-        <div class="table-wrapper">
-            <table id="reservation-table">
-                <thead>
-                    <tr>
+        <div class="table-container">
+            <table class="table-wrapper">
+                <thead class="reservation-table-head">
+                    <tr class="reservation-table-head">
                         <th class="reservation-table-header"></th>
                     </tr>
                 </thead>
-                <tbody class="table-cell" id="reservation-block"></tbody>
+                <tbody class="reservation-table-instance"></tbody>
             </table>
         </div>
 

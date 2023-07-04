@@ -15,36 +15,13 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  border: 1px solid black;
+  transition: all 0.2s ease-in-out;
 }
 
-.hoverEffect::before {
-  content: '';
-  width: 0;
-  height: 3em;
-  border-radius: 30em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: 0.5s ease;
-  display: block;
-  z-index: -1;
-}
-
-.hoverEffect:hover::before {
-  width: 9em;
-}
-
-.general-button::before {
-  background-image: linear-gradient(to right, #0fd850 0%, #0dc447 100%);
-}
-
-.search-button::before {
-  background-image: linear-gradient(to right, seagreen 0%, seagreen 100%);
-}
-
-.back-button::before {
-  background-image: linear-gradient(to right, #f44336 0%, #f44336 100%);
+.hoverEffect:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 black;
 }
 
 input[id^='cancel-'] {

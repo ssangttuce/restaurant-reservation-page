@@ -2,43 +2,54 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/container.css">
-    <link rel="stylesheet" href="../CSS/table.css">
-    <link rel="stylesheet" href="../CSS/button.css">
-    <title>예약</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/container.css">
+  <link rel="stylesheet" href="../CSS/table.css">
+  <link rel="stylesheet" href="../CSS/form-input.css">
+  <link rel="stylesheet" href="../CSS/button.css">
+  <title>예약</title>
 </head>
 
 <body onload="genTableNum(17)">
-    <div class="container">
-        <h1>예약하기</h1>
-        <form>
-            <label for="name">예약자명</label>
-            <input type="text" id="name" name="reservation-name" required>
-            <label for="name">전화번호</label>
-            <input type="tel" id="phone" name="reservation-phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
-            <label>입장 시간</label>
-            <div class="timeWrapper">
-                <select name="reservation-hour" class="hour" required></select>
-                <select name="reservation-minute" class="minute" required></select>
-                <!-- JS에서 validation 검증 -->
-            </div>
-            <label for="people">인원수</label>
-            <input type="number" id="people" name="reservation-people" min="1" max="10" required>
-            <label for="table-num">테이블 번호</label>
-            <select name="reservation-tablenum" class="table-num" required>
-                <!-- JS에서 validation 검증 -->
-            </select>
-            <button type="submit" class="hoverEffect general-button">완료</button>
-        </form>
-        <button class="hoverEffect back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
-    </div>
+  <div class="container">
+    <h1>예약하기</h1>
+    <form>
+      <div class="input-wrapper">
+        <input type="text" class="getInfo" id="name" name="reservation-name" required>
+        <label for="name">예약자명</label>
+      </div>
+      <div class="input-wrapper">
+        <input type="tel" class="getInfo" id="phone" name="reservation-phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+          required>
+        <label for="name">전화번호</label>
+      </div>
+      <div class="input-wrapper">
+        <select name="reservation-hour" class="getInfo hour" required></select>
+        <select name="reservation-minute" class="getInfo minute" required></select>
+        <label>입장 시간</label>
+      </div>
 
-    <script src="../JS/getReservation.js"></script>
-    <script src="../JS/genTime.js"></script>
-    <script src="../JS/app.js"></script>
+      <div class="input-wrapper">
+        <input type="number" class="getInfo" id="people" name="reservation-people" min="1" max="10" required>
+        <label for="people">인원수</label>
+      </div>
+
+      <div class="input-wrapper">
+        <select name="reservation-tablenum" class="getInfo table-num" required></select>
+        <label for="table-num">테이블 번호</label>
+      </div>
+
+      
+      <button type="submit" class="hoverEffect general-button">완료</button>
+    </form>
+    <button class="hoverEffect back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
+  </div>
+  <script src="../JS/getReservation.js"></script>
+  <script src="../JS/genTime.js"></script>
+  <script src="../JS/app.js"></script>
+
 </body>
 
 </html>

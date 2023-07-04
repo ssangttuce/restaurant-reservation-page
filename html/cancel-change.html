@@ -16,25 +16,37 @@
     <div class="container">
         <div class="main-header">
             <h1>예약 조회하기</h1>
-            <form onsubmit="return false">
+            <form>
                 <label for="name">예약자명</label>
                 <input type="text" id="search-name" name="name" required>
                 <button type="button" class="hoverEffect search-button" onclick="searchTableByName()">조회</button>
             </form>
         </div>
 
-        <div class="table-wrapper">
-            <table>
-                <thead>
+
+        <table class="table-wrapper">
+            <thead class="reservation-table-head">
+                <tr class="reservation-table-head">
                     <th class="reservation-table-header">날짜</th>
                     <th class="reservation-table-header">시간</th>
                     <th class="reservation-table-header">테이블</th>
                     <th class="reservation-table-header">인원</th>
                     <th class="reservation-table-header">작업</th>
-                </thead>
-                <tbody id="reservation-list"></tbody>
-            </table>
-        </div>
+                </tr>
+            </thead>
+            <tbody id="reservation-list">
+                <tr class="reservation-instance">
+                    <td class="reservation-information">1</td>
+                    <td class="reservation-information">2</td>
+                    <td class="reservation-information">3</td>
+                    <td class="reservation-information">4</td>
+                    <td class="reservation-information">
+                        <button class="change-button">변경</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
         <div id="cancel-check-modal">
             <h1>해당 예약 정말로 취소하시겠습니까?</h1>
             <form>
@@ -55,8 +67,9 @@
 
         <button class="hoverEffect back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
     </div>
-    <!-- <script src="../JS/app.js"></script> -->
     <script src="../JS/getReservation.js"></script>
+    <script src="../JS/app.js"></script>
+    <script src="../JS/searchReservation.js"></script>
 </body>
 
 </html>

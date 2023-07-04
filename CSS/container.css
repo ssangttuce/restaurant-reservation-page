@@ -1,5 +1,7 @@
 * {
   text-align: center;
+  box-sizing: border-box;
+  border-collapse: collapse;
 }
 
 body {
@@ -17,7 +19,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 
 .container {
@@ -25,20 +27,46 @@ form {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  width: 80vw;
+  position: relative;
 
+  width: 80vw;
   min-height: 60vh;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
 
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
-    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  background: #ffffff;
+  background-image: linear-gradient(#ffffff 1.1rem, #ccc 1.2rem);
+  background-size: 100% 1.2rem;
+  border-radius: 10px;
 }
 
-.hour,
-.minute {
-  width: 30%;
+.container::before,
+.container::after {
+  position: absolute;
+  content: '';
+  bottom: 10px;
+  width: 40%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.container::before {
+  left: 15px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+
+.container::after {
+  right: 15px;
+  transform: skew(5deg) rotate(5deg);
+}
+
+.table-container {
+  /* position: relative; */
+  width: 70%;
+  height: 50vh;
+  overflow: auto;
 }
 
 #cancel-check-modal {
@@ -63,6 +91,7 @@ form {
 .main-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   width: 70%;
 }

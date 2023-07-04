@@ -1,0 +1,49 @@
+.getInfo {
+  --input-focus: #2d8cf0;
+  flex-grow: 1;
+  max-width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: white;
+  box-shadow: 4px 4px black;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.getInfo:focus,
+.getInfo:active {
+  border: 2px solid var(--input-focus);
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  width: 200px;
+}
+
+.input-wrapper > .getInfo:first-child{
+  min-width: 120px;
+}
+
+.input-wrapper > label {
+  position: absolute;
+  left: 0;
+  padding: 8px 20px;
+  pointer-events: none;
+  font-size: 1em;
+  transition: 0.4s cubic-bezier(0.05, 0.81, 0, 0.93);
+}
+
+.input-wrapper > .getInfo:focus ~ label,
+.input-wrapper > .hour:active ~ label,
+.input-wrapper > .getInfo:valid ~ label{
+  font-size: 1em;
+  transform: translateX(14px) translateY(-12px);
+  padding: 0 5px;
+  background: white;
+}
