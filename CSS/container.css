@@ -1,7 +1,6 @@
 * {
   text-align: center;
   box-sizing: border-box;
-  border-collapse: collapse;
 }
 
 body {
@@ -63,7 +62,7 @@ form {
 }
 
 .table-container {
-  /* position: relative; */
+  position: relative;
   width: 70%;
   height: 50vh;
   overflow: auto;

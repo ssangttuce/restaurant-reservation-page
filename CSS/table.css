@@ -1,13 +1,16 @@
 .table-wrapper {
+  position: sticky;
+  top: 0;
+
   width: 80%;
   height: 50vh;
 
   background-color: white;
 
-  border: 1px solid black;
-
+  border-spacing: 0;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
     rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  overflow-x: auto;
 }
 
 .table-row:nth-child(n):hover td[id^='table-']:nth-child(n) {
@@ -40,29 +43,30 @@
 .reservation-table-head {
   display: flex;
   position: sticky;
+  top: 0;
 
   width: 100%;
-
-  border-collapse: collapse;
+  background-color: white;
+  z-index: 1;
 }
 
 .reservation-table-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-grow: 1;
 
   width: 80px;
   height: 30px;
 
   border: 1px solid black;
-  border-top: 0;
-  border-bottom: 0;
 }
 
-.reservation-table-header:first-child {
-  border-left: 0;
-}
+td[id^='table-'] {
+  position: sticky;
+  left: 0;
 
-.reservation-table-header:last-child {
-  border-right: 0;
+  background-color: white;
 }
 
 #reservation-list,
