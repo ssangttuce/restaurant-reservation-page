@@ -1,32 +1,20 @@
 function genHour(openHour) {
-  let list = document.getElementsByClassName('hour');
-  list[0].appendChild(document.createElement('option'));
-  for (let j = 0; j < openHour; j++) {
-    let h = document.createElement('option');
-    h.value = j;
-    h.innerText = j;
-    list[0].appendChild(h);
-  }
+  let list = document.querySelector('.hour');
+  optionTagGenerator(list, openHour);
 }
 
 function genMinutes(minuteOption) {
-  let list = document.getElementsByClassName('minute');
-  list[0].appendChild(document.createElement('option'));
-  for (let opt of minuteOption) {
-    genMinute(opt);
-  }
-
-  function genMinute(min) {
-    // 입장 시간, 퇴장 시간 있을까봐 이렇게 만듦
-
-    for (let i = 0; i < list.length; i++) {
-      let m = document.createElement('option');
-      m.value = min;
-      m.innerText = min;
-      list[0].appendChild(m);
-    }
-  }
+  let list = document.querySelector('.minute');
+  optionTagGenerator(list, minuteOption);
 }
 
-genHour(24);
-genMinutes([00, 30]);
+function optionTagGenerator(target, objectSet) {
+  for (let i = 0; i < objectSet.length; i++) {
+    let option = document.createElement('option');
+    option.value = objectSet[i];
+    option.innerText = objectSet[i];
+    target.appendChild(option);
+  }
+}
+genHour([10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
+genMinutes(['00', '30']);

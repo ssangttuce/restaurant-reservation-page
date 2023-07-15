@@ -26,13 +26,13 @@
         <label for="name">전화번호</label>
       </div>
       <div class="input-wrapper">
-        <select name="reservation-hour" class="getInfo hour" required></select>
+        <select name="reservation-hour" class="hour getInfo" required></select>
         <select name="reservation-minute" class="getInfo minute" required></select>
         <label>입장 시간</label>
       </div>
 
       <div class="input-wrapper">
-        <input type="number" class="getInfo" id="people" name="reservation-people" min="1" max="10" required>
+        <input type="number" class="getInfo" id="people" name="reservation-people" min="1" max="10" value="1" required>
         <label for="people">인원수</label>
       </div>
 
@@ -41,7 +41,7 @@
         <label for="table-num">테이블 번호</label>
       </div>
 
-      
+
       <button type="submit" class="hoverEffect general-button">완료</button>
     </form>
     <button class="hoverEffect back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
