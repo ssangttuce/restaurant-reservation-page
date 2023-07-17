@@ -51,6 +51,7 @@ function searchTableByName() {
     let c1 = document.createElement('button');
     let c2 = document.createElement('input');
     c1.innerText = '변경';
+    // c1.value = '변경';
     c1.className = 'change-button';
     c2.setAttribute('type', 'checkbox');
     c2.id = `cancel-${cancelNum}`;

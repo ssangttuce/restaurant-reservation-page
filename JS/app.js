@@ -32,6 +32,9 @@ function initialSetting() {
       table.appendChild(td);
     }
   }
+
+  let searchDate = document.querySelector('input[type = "date"]');
+  searchDate.setAttribute('value', todayDate);
   genTimeline(48);
   addTable(20);
 }

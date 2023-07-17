@@ -1,3 +1,4 @@
+//reservation을 조회, 추가, 삭제 등 함수 구현
 let totalReservation = [
   {
     arrivalDateTime: 'a',
