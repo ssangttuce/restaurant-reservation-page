@@ -1,4 +1,3 @@
-// import { totalReservation as tR } from './getReservation.js';
 let tR = [
   {
     arrivalDateTime: 'a',
@@ -10,36 +9,48 @@ let tR = [
     phoneNumber: '01053413270',
     tableNumber: 16,
   },
+  {
+    arrivalDateTime: 'a',
+    bookingDateTime: '오늘',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 16,
+  },
 ];
 
 let tRcnt = totalReservation.length;
 
 function searchTableByName() {
-  let userName = document.getElementById('search-name').value;
+  let userName = document.querySelector('#search-name').value;
   if (userName == null) return;
-  let searchResult = document.getElementById('reservation-list');
-  searchResult.innerHTML = '';
+
+  let searchResult = document.querySelector('#reservation-list');
+  searchResult.setAttribute('innerHTML', '');
 
   for (let i = 0; i < tR.length; i++) {
     if (tR[i].name === userName) {
-      let inquiredReservation = tR[i];
-      let reservationRow = document.createElement('tr');
+      let requiredReservation = tR[i];
 
-      let reservationInfo = `<td>` + `${inquiredReservation.bookingDateTime}` + `</td>`;
-      reservationInfo += `<td>` + `${inquiredReservation.bookingDateTime}` + `</td>`;
-      reservationInfo += `<td>` + `${inquiredReservation.tableNumber}` + `</td>`;
-      reservationInfo += `<td>` + `${inquiredReservation.covers}` + `</td>`;
-      reservationRow.innerHTML = reservationInfo + `<td></td>`;
+      let reservationInfo = '';
+      reservationInfo += `<td>` + `${requiredReservation.bookingDateTime}` + `</td>`;
+      reservationInfo += `<td>` + `${requiredReservation.bookingDateTime}` + `</td>`;
+      reservationInfo += `<td>` + `${requiredReservation.tableNumber}` + `</td>`;
+      reservationInfo += `<td>` + `${requiredReservation.covers}` + `</td>`;
+
+      let reservationRow = document.createElement('tr');
+      reservationRow.setAttribute('innerHTML', reservationInfo + `<td></td>`);
 
       for (let cc of ccButton(i)) {
-        reservationRow.lastElementChild.appendChild(cc);
+        reservationRow.appendChild(cc);
       }
-      i++;
-
-      reservationRow.lastElementChild.lastElementChild.onclick = () => {
+      reservationRow.lastElementChild.onclick = () => {
         const cancelReservation = document.createElement('tr');
-        cancelReservation.innerHTML = reservationInfo;
-        document.getElementById('cancel-reservation').appendChild(cancelReservation);
+        cancelReservation.setAttribute('innerHTML', reservationInfo);
+        document.querySelector('#cancel-reservation').appendChild(cancelReservation);
+        //삭제 버튼을 누르면 해당 행의 예약 정보를 취소 페이지에 넘겨주어야 함
       };
 
       searchResult.appendChild(reservationRow);
@@ -47,32 +58,31 @@ function searchTableByName() {
   }
 
   function ccButton(cancelNum) {
-    // cc: cancel and change
     let c1 = document.createElement('button');
-    let c2 = document.createElement('input');
-    c1.innerText = '변경';
-    // c1.value = '변경';
-    c1.className = 'change-button';
-    c2.setAttribute('type', 'checkbox');
-    c2.id = `cancel-${cancelNum}`;
-    c2.name = 'cancel-reservation';
-    let c2Label = document.createElement('label');
-    c2Label.setAttribute(`for`, `cancel-${cancelNum}`);
-    c2Label.innerText = '취소';
-
+    c1.setAttribute('innerText', '변경');
+    c1.setAttribute('class', 'change-button');
     c1.onclick = () => {
       location.href = '../html/changeReservation.html';
     };
+
+    let c2 = document.createElement('input');
+    c2.setAttribute('type', 'checkbox');
+    c2.setAttribute('id', `cancel-${cancelNum}`);
+    c2.setAttribute('name', 'cancel-reservation');
     c2.onclick = () => {
-      let cancelModal = document.getElementById('cancel-check-modal');
+      let cancelModal = document.querySelector('#cancel-check-modal');
       cancelModal.style.visibility = 'visible';
 
       for (let i = 0; ; i++) {
-        let cancelBtn = document.getElementById(`cancel-${i}`);
+        let cancelBtn = document.querySelector(`#cancel-${i}`);
         if (cancelBtn == null) break;
-        cancelBtn.disabled = true;
+        cancelBtn.setAttribute('disabled', true);
       }
     };
+
+    let c2Label = document.createElement('label');
+    c2Label.setAttribute(`for`, `cancel-${cancelNum}`);
+    c2Label.setAttribute('innerText', '취소');
 
     return [c1, c2, c2Label];
   }
