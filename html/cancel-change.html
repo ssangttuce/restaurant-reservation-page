@@ -40,14 +40,17 @@
         <div id="cancel-check-modal">
             <h1>해당 예약 정말로 취소하시겠습니까?</h1>
             <form>
-                <div>
-                    <table id="cancel-reservation">
+                <div class="table-wrapper">
+                    <table>
                         <thead>
                             <th class="reservation-table-header">날짜</th>
                             <th class="reservation-table-header">시간</th>
                             <th class="reservation-table-header">테이블</th>
                             <th class="reservation-table-header">인원</th>
                         </thead>
+                        <tbody id="cancel-reservation">
+
+                        </tbody>
                     </table>
                 </div>
                 <button type="submit" class="hoverEffect">예약취소</button>
@@ -57,8 +60,6 @@
 
         <button class="hoverEffect" onclick="location.href = './MainTable.html' ">뒤로가기</button>
     </div>
-    <script src="../JS/getReservation.js"></script>
-    <script src="../JS/app.js"></script>
     <script src="../JS/cancel-change-page.js"></script>
 </body>
 

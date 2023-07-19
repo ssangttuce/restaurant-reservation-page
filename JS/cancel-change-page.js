@@ -7,7 +7,7 @@ let reservationList = [
     id: 0,
     name: '',
     phoneNumber: '01053413270',
-    tableNumber: 6,
+    tableNumber: 1,
   },
   {
     arrivalDateTime: '오늘',
@@ -17,7 +17,7 @@ let reservationList = [
     id: 0,
     name: '',
     phoneNumber: '01053413270',
-    tableNumber: 6,
+    tableNumber: 2,
   },
   {
     arrivalDateTime: '오늘',
@@ -27,7 +27,7 @@ let reservationList = [
     id: 0,
     name: '',
     phoneNumber: '01053413270',
-    tableNumber: 6,
+    tableNumber: 3,
   },
   {
     arrivalDateTime: '오늘',
@@ -37,11 +37,11 @@ let reservationList = [
     id: 0,
     name: '',
     phoneNumber: '01053413270',
-    tableNumber: 6,
+    tableNumber: 4,
   },
 ];
 
-let tRcnt = totalReservation.length;
+let inquiredList = [];
 
 function searchTableByName() {
   let userName = document.querySelector('#search-name').value;
@@ -60,6 +60,7 @@ function searchTableByName() {
       reservationInfo += `<td>` + `${requiredReservation.bookingDateTime}` + `</td>`;
       reservationInfo += `<td>` + `${requiredReservation.tableNumber}` + `</td>`;
       reservationInfo += `<td>` + `${requiredReservation.covers}` + `</td>`;
+      inquiredList.push(reservationInfo);
 
       let reservationRow = document.createElement('tr');
       reservationRow.setAttribute('class', 'reservation-information');
@@ -67,20 +68,20 @@ function searchTableByName() {
 
       for (let cc of ccButton(inquiredIndex)) {
         reservationRow.lastElementChild.appendChild(cc);
-
-        const cancelbuttons = document.querySelectorAll('[id ^= "cancelItem-"]');
-        for (let cancelbutton of cancelbuttons) {
-          cancelbutton.onclick = () => {
-            const cancelReservation = document.createElement('tr');
-            cancelReservation.innerHTML = reservationInfo;
-            document.querySelector('#cancel-reservation').appendChild(cancelReservation);
-          };
-        }
       }
       inquiredIndex++;
 
       searchResult.appendChild(reservationRow);
     }
+  }
+
+  const cancelbuttons = document.querySelectorAll('[id ^= "cancelItem-"]');
+  for (let i = 0; i < cancelbuttons.length; i++) {
+    cancelbuttons[i].addEventListener('click', () => {
+      const cancelReservation = document.createElement('tr');
+      cancelReservation.innerHTML = inquiredList[i];
+      document.querySelector('#cancel-reservation').appendChild(cancelReservation);
+    });
   }
 
   function ccButton(cancelNum) {
@@ -98,9 +99,8 @@ function searchTableByName() {
     c2.onclick = () => {
       let cancelModal = document.querySelector('#cancel-check-modal');
       cancelModal.style.visibility = 'visible';
-
-      let cancelBtn = document.querySelectorAll(`[id *= 'cancelItem-']`);
-      for (let button of cancelBtn) button.setAttribute('disabled', true);
+      // let cancelBtn = document.querySelectorAll(`[id *= 'cancelItem-']`);
+      // for (let button of cancelBtn) button.setAttribute('disabled', true);
     };
 
     let c2Label = document.createElement('label');
