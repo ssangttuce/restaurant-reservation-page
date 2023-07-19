@@ -13,10 +13,6 @@
   overflow-x: auto;
 }
 
-.table-row:nth-child(n):hover td[id^='table-']:nth-child(n) {
-  background-color: #a8a8a8;
-}
-
 .table-row {
   display: flex;
 
@@ -30,6 +26,17 @@
   height: 30px;
 
   border: 1px solid black;
+}
+
+td[id^='table-'] {
+  position: sticky;
+  left: 0;
+
+  background-color: white;
+}
+
+.table-row:nth-child(n):hover td[id^='table-']:nth-child(n) {
+  background-color: #a8a8a8;
 }
 
 .available {
@@ -62,24 +69,23 @@
   border: 1px solid black;
 }
 
-td[id^='table-'] {
-  position: sticky;
-  left: 0;
-
-  background-color: white;
-}
-
-#reservation-list,
-.reservation-instance {
+#reservation-list {
   display: flex;
-
-  width: 100%;
+  flex-direction: column;
+}
+.reservation-information {
+  display: flex;
+  align-items: center;
 }
 
-.reservation-information {
+.reservation-information > * {
   flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  width: 80px;
+  width: 20%;
+  height: 30px;
 
-  border: 1px solid black;
+  border: 1px solid #afafaf;
 }

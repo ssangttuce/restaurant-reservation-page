@@ -13,12 +13,27 @@ body {
   text-align: center;
 }
 
+table,
+tr,
+td,
+thead,
+tbody {
+  overflow: hidden;
+}
+
 form {
   width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
+}
+
+button {
+  padding: 0;
+  border: none;
+  margin: 0;
+  background-color: inherit;
 }
 
 .container {

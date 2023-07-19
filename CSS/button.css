@@ -6,16 +6,20 @@
 
 .hoverEffect {
   cursor: pointer;
+
+  font-size: 15px;
+
   width: 9em;
   height: 3em;
-  border-radius: 30em;
-  font-size: 15px;
-  font-family: inherit;
-  border: none;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+  max-width: 45%;
+  max-height: 85%;
+
+  background-color: #f5f3f4;
   border: 1px solid black;
+  border-radius: 30em;
+
+  overflow: hidden;
+
   transition: all 0.2s ease-in-out;
 }
 
@@ -24,31 +28,6 @@
   box-shadow: 2px 5px 0 0 black;
 }
 
-input[id^='cancel-'] {
+input[id^='cancelItem-'] {
   display: none;
-}
-
-.change-button,
-input[id^='cancel-'] + label {
-  all: unset;
-
-  display: inline-block;
-  width: 50px;
-  height: 24px;
-  background-color: white;
-  border: 2px solid #f44336;
-  color: #f44336;
-  border-radius: 7px;
-
-  font-size: 16px;
-  transition: 0.2s;
-  box-sizing: border-box;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.change-button:hover,
-input[id^='cancel-'] + label:hover {
-  cursor: pointer;
-  background-color: #f44336;
-  color: white;
 }

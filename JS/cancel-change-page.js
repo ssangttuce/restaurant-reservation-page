@@ -1,23 +1,43 @@
-let tR = [
+let reservationList = [
   {
-    arrivalDateTime: 'a',
-    bookingDateTime: '오늘',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '김상후',
-    phoneNumber: '01053413270',
-    tableNumber: 16,
-  },
-  {
-    arrivalDateTime: 'a',
-    bookingDateTime: '오늘',
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
     bookingStatus: 'c',
     covers: 4,
     id: 0,
     name: '',
     phoneNumber: '01053413270',
-    tableNumber: 16,
+    tableNumber: 6,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 6,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 6,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 6,
   },
 ];
 
@@ -28,30 +48,36 @@ function searchTableByName() {
   if (userName == null) return;
 
   let searchResult = document.querySelector('#reservation-list');
-  searchResult.setAttribute('innerHTML', '');
+  searchResult.innerHTML = '';
 
-  for (let i = 0; i < tR.length; i++) {
-    if (tR[i].name === userName) {
-      let requiredReservation = tR[i];
+  let inquiredIndex = 0;
+  for (let tR of reservationList) {
+    if (tR.name === userName) {
+      let requiredReservation = tR;
 
       let reservationInfo = '';
-      reservationInfo += `<td>` + `${requiredReservation.bookingDateTime}` + `</td>`;
+      reservationInfo += `<td>` + `${requiredReservation.arrivalDateTime}` + `</td>`;
       reservationInfo += `<td>` + `${requiredReservation.bookingDateTime}` + `</td>`;
       reservationInfo += `<td>` + `${requiredReservation.tableNumber}` + `</td>`;
       reservationInfo += `<td>` + `${requiredReservation.covers}` + `</td>`;
 
       let reservationRow = document.createElement('tr');
-      reservationRow.setAttribute('innerHTML', reservationInfo + `<td></td>`);
+      reservationRow.setAttribute('class', 'reservation-information');
+      reservationRow.innerHTML = reservationInfo + `<td></td>`;
 
-      for (let cc of ccButton(i)) {
-        reservationRow.appendChild(cc);
+      for (let cc of ccButton(inquiredIndex)) {
+        reservationRow.lastElementChild.appendChild(cc);
+
+        const cancelbuttons = document.querySelectorAll('[id ^= "cancelItem-"]');
+        for (let cancelbutton of cancelbuttons) {
+          cancelbutton.onclick = () => {
+            const cancelReservation = document.createElement('tr');
+            cancelReservation.innerHTML = reservationInfo;
+            document.querySelector('#cancel-reservation').appendChild(cancelReservation);
+          };
+        }
       }
-      reservationRow.lastElementChild.onclick = () => {
-        const cancelReservation = document.createElement('tr');
-        cancelReservation.setAttribute('innerHTML', reservationInfo);
-        document.querySelector('#cancel-reservation').appendChild(cancelReservation);
-        //삭제 버튼을 누르면 해당 행의 예약 정보를 취소 페이지에 넘겨주어야 함
-      };
+      inquiredIndex++;
 
       searchResult.appendChild(reservationRow);
     }
@@ -59,31 +85,28 @@ function searchTableByName() {
 
   function ccButton(cancelNum) {
     let c1 = document.createElement('button');
-    c1.setAttribute('innerText', '변경');
-    c1.setAttribute('class', 'change-button');
+    c1.innerText = '변경';
+    c1.setAttribute('class', 'hoverEffect');
     c1.onclick = () => {
       location.href = '../html/changeReservation.html';
     };
 
     let c2 = document.createElement('input');
     c2.setAttribute('type', 'checkbox');
-    c2.setAttribute('id', `cancel-${cancelNum}`);
+    c2.setAttribute('id', `cancelItem-${cancelNum}`);
     c2.setAttribute('name', 'cancel-reservation');
     c2.onclick = () => {
       let cancelModal = document.querySelector('#cancel-check-modal');
       cancelModal.style.visibility = 'visible';
 
-      for (let i = 0; ; i++) {
-        let cancelBtn = document.querySelector(`#cancel-${i}`);
-        if (cancelBtn == null) break;
-        cancelBtn.setAttribute('disabled', true);
-      }
+      let cancelBtn = document.querySelectorAll(`[id *= 'cancelItem-']`);
+      for (let button of cancelBtn) button.setAttribute('disabled', true);
     };
 
     let c2Label = document.createElement('label');
-    c2Label.setAttribute(`for`, `cancel-${cancelNum}`);
-    c2Label.setAttribute('innerText', '취소');
-
+    c2Label.innerText = '취소';
+    c2Label.setAttribute(`for`, `cancelItem-${cancelNum}`);
+    c2Label.setAttribute('class', 'hoverEffect');
     return [c1, c2, c2Label];
   }
 }
