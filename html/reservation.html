@@ -12,7 +12,7 @@
   <title>예약</title>
 </head>
 
-<body onload="genTableNum(17)">
+<body>
   <div class="container">
     <h1>예약하기</h1>
     <form>
@@ -26,22 +26,24 @@
         <label for="name">전화번호</label>
       </div>
       <div class="input-wrapper">
+        <input type="date" name="search-date" class="getInfo date">
+        <label>날짜 선택</label>
+      </div>
+      <div class="input-wrapper">
         <select name="reservation-hour" class="hour getInfo" required></select>
         <select name="reservation-minute" class="getInfo minute" required></select>
         <label>입장 시간</label>
       </div>
 
       <div class="input-wrapper">
-        <input type="number" class="getInfo" id="people" name="reservation-people" min="1" max="10" value="1" required>
-        <label for="people">인원수</label>
+        <input type="number" class="getInfo personnel" name="reservation-people" min="1" max="10" value="1" required>
+        <label>인원수</label>
       </div>
 
       <div class="input-wrapper">
         <select name="reservation-tablenum" class="getInfo table-num" required></select>
         <label for="table-num">테이블 번호</label>
       </div>
-
-
       <button type="submit" class="hoverEffect general-button">완료</button>
     </form>
     <button class="hoverEffect back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
