@@ -39,6 +39,126 @@ let reservationList = [
     phoneNumber: '01053413270',
     tableNumber: 4,
   },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 1,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 2,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 3,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 4,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 1,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 2,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 3,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 4,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 1,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 2,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 3,
+  },
+  {
+    arrivalDateTime: '오늘',
+    bookingDateTime: '지금',
+    bookingStatus: 'c',
+    covers: 4,
+    id: 0,
+    name: '',
+    phoneNumber: '01053413270',
+    tableNumber: 4,
+  },
 ];
 
 let inquiredList = [];
@@ -56,10 +176,10 @@ function searchTableByName() {
       let requiredReservation = tR;
 
       let reservationInfo = '';
-      reservationInfo += `<td>` + `${requiredReservation.arrivalDateTime}` + `</td>`;
-      reservationInfo += `<td>` + `${requiredReservation.bookingDateTime}` + `</td>`;
-      reservationInfo += `<td>` + `${requiredReservation.tableNumber}` + `</td>`;
-      reservationInfo += `<td>` + `${requiredReservation.covers}` + `</td>`;
+      reservationInfo += `<td class="reservation-table-header">` + `${requiredReservation.arrivalDateTime}` + `</td>`;
+      reservationInfo += `<td class="reservation-table-header">` + `${requiredReservation.bookingDateTime}` + `</td>`;
+      reservationInfo += `<td class="reservation-table-header">` + `${requiredReservation.tableNumber}` + `</td>`;
+      reservationInfo += `<td class="reservation-table-header">` + `${requiredReservation.covers}` + `</td>`;
       inquiredList.push(reservationInfo);
 
       let reservationRow = document.createElement('tr');
@@ -79,6 +199,7 @@ function searchTableByName() {
   for (let i = 0; i < cancelbuttons.length; i++) {
     cancelbuttons[i].addEventListener('click', () => {
       const cancelReservation = document.createElement('tr');
+      cancelReservation.setAttribute('class', 'reservation-table-head');
       cancelReservation.innerHTML = inquiredList[i];
       document.querySelector('#cancel-reservation').appendChild(cancelReservation);
     });
@@ -99,8 +220,6 @@ function searchTableByName() {
     c2.onclick = () => {
       let cancelModal = document.querySelector('#cancel-check-modal');
       cancelModal.style.visibility = 'visible';
-      // let cancelBtn = document.querySelectorAll(`[id *= 'cancelItem-']`);
-      // for (let button of cancelBtn) button.setAttribute('disabled', true);
     };
 
     let c2Label = document.createElement('label');

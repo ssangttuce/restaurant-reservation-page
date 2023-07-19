@@ -1,0 +1,9 @@
+.modal-table-wrapper {
+  width: 100%;
+  display: flex;
+}
+.modal-table {
+  display: flex;
+
+  width: 100%;
+}
