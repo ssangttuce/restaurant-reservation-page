@@ -1,167 +1,9 @@
-let reservationList = [
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 1,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 2,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 3,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 4,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 1,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 2,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 3,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 4,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 1,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 2,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 3,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 4,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 1,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 2,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 3,
-  },
-  {
-    arrivalDateTime: '오늘',
-    bookingDateTime: '지금',
-    bookingStatus: 'c',
-    covers: 4,
-    id: 0,
-    name: '',
-    phoneNumber: '01053413270',
-    tableNumber: 4,
-  },
-];
+import { reservationList, setReservation } from './reservationStorage.js';
 
 let inquiredList = [];
+
+const searchButton = document.querySelector('.search-button');
+searchButton.addEventListener('click', searchTableByName);
 
 function searchTableByName() {
   let userName = document.querySelector('#search-name').value;
@@ -171,15 +13,14 @@ function searchTableByName() {
   searchResult.innerHTML = '';
 
   let inquiredIndex = 0;
-  for (let tR of reservationList) {
-    if (tR.name === userName) {
-      let requiredReservation = tR;
-
+  for (let reservation of reservationList) {
+    if (reservation.name === userName) {
       let reservationInfo = '';
-      reservationInfo += `<td class="reservation-table-header">` + `${requiredReservation.arrivalDateTime}` + `</td>`;
-      reservationInfo += `<td class="reservation-table-header">` + `${requiredReservation.bookingDateTime}` + `</td>`;
-      reservationInfo += `<td class="reservation-table-header">` + `${requiredReservation.tableNumber}` + `</td>`;
-      reservationInfo += `<td class="reservation-table-header">` + `${requiredReservation.covers}` + `</td>`;
+      reservationInfo += `<td class="reservation-table-header">` + `${reservation.date}` + `</td>`;
+      reservationInfo +=
+        `<td class="reservation-table-header">` + `${reservation.hour}` + ':' + `${reservation.minute}` + `</td>`;
+      reservationInfo += `<td class="reservation-table-header">` + `${reservation.tablenumber}` + `</td>`;
+      reservationInfo += `<td class="reservation-table-header">` + `${reservation.personnel}` + `</td>`;
       inquiredList.push(reservationInfo);
 
       let reservationRow = document.createElement('tr');

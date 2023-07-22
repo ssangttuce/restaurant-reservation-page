@@ -17,38 +17,37 @@
     <h1>예약하기</h1>
     <form>
       <div class="input-wrapper">
-        <input type="text" class="getInfo" id="name" name="reservation-name" required>
+        <input type="text" class="getInfo" id="name" name="name" required>
         <label for="name">예약자명</label>
       </div>
       <div class="input-wrapper">
-        <input type="tel" class="getInfo" id="phone" name="reservation-phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
-          required>
+        <input type="tel" class="getInfo" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
         <label for="name">전화번호</label>
       </div>
       <div class="input-wrapper">
-        <input type="date" name="search-date" class="getInfo date">
+        <input type="date" name="date" class="getInfo date">
         <label>날짜 선택</label>
       </div>
       <div class="input-wrapper">
-        <select name="reservation-hour" class="hour getInfo" required></select>
-        <select name="reservation-minute" class="getInfo minute" required></select>
+        <select name="hour" class="hour getInfo" required></select>
+        <select name="minute" class="getInfo minute" required></select>
         <label>입장 시간</label>
       </div>
 
       <div class="input-wrapper">
-        <input type="number" class="getInfo personnel" name="reservation-people" min="1" max="10" value="1" required>
+        <input type="number" class="getInfo personnel" name="personnel" min="1" max="10" value="1" required>
         <label>인원수</label>
       </div>
 
       <div class="input-wrapper">
-        <select name="reservation-tablenum" class="getInfo table-num" required></select>
+        <select name="tablenumber" class="getInfo table-num" required></select>
         <label for="table-num">테이블 번호</label>
       </div>
       <button type="submit" class="hoverEffect general-button">완료</button>
     </form>
     <button class="hoverEffect back-button" onclick="location.href = './MainTable.html' ">뒤로가기</button>
   </div>
-  <script src="../JS/reservation-form.js"></script>
+  <script type="module" src="../JS/reservation-form.js"></script>
 
 </body>
 

@@ -1,3 +1,5 @@
+import { setReservation } from './reservationStorage.js';
+
 function optionTagGenerator(target, objectSet) {
   for (let i = 0; i < objectSet.length; i++) {
     let option = document.createElement('option');
@@ -25,3 +27,6 @@ function genTableNum(maxTableCount) {
 genHour([10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
 genMinutes(['00', '30']);
 genTableNum([1, 2, 3, 4, 5, 6]);
+
+let asdasd = document.querySelector('form');
+asdasd.addEventListener('submit', setReservation);
