@@ -13,13 +13,13 @@
     <link rel="stylesheet" href="../CSS/button.css">
 </head>
 
-<body onload="initialSetting()">
+<body>
     <div class="container">
         <div class="main-header">
             <h1 class="restaurant-name">레스토랑</h1>
             <form>
                 <div class="input-wrapper">
-                    <input type="date" name="search-date" class="getInfo date" onchange="getReservation()">
+                    <input type="date" name="search-date" class="getInfo date">
                     <label>날짜 선택</label>
                 </div>
             </form>
@@ -45,7 +45,7 @@
             <button class="button" onclick="location.href = './shiftTable.html' ">좌석이동</button> -->
         </div>
     </div>
-    <script src="../JS/main-page.js"></script>
+    <script type="module" src="../JS/main-page.js"></script>
 </body>
 
 </html>
